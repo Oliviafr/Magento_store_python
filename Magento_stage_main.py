@@ -10,7 +10,7 @@ import time
 class MerkeRules(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
-        self.EMAIL = "lwilliam670+0907_42@gmail.com"
+        self.EMAIL = "lwilliam670+0911_43.1@gmail.com"
         # self.PASSWORD = "Ifo10044"
         # self.SEARCH_TEXT_FORGOTPW = "Forgot password?"
         # self.OFACCOUNT = "Olivia Frumin Test Account"

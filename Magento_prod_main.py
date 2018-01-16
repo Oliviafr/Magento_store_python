@@ -10,7 +10,7 @@ import time
 class MerkeRules(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
-        self.EMAIL = "lwilliam670+1004_46@gmail.com"
+        self.EMAIL = "lwilliam670+0116_3.0@gmail.com"
         # self.PASSWORD = "Ifo10044"
         # self.SEARCH_TEXT_FORGOTPW = "Forgot password?"
         # self.OFACCOUNT = "Olivia Frumin Test Account"
@@ -19,17 +19,13 @@ class MerkeRules(unittest.TestCase):
         # import pdb
         # pdb.set_trace()
         driver = self.driver
-        # self.driver.get("http://magento-stage.500friends.com/furniture")
-        self.driver.get("http://magento.500friends.com/furniture")
-        time.sleep(2)
-        self.driver.get("http://magento.500friends.com/couch.html")
-        # driver.find_element_by_link_text("Couch").click()
-        # driver.find_element_by_css_selector("body > div > div > div.main.col3-layout > div.col-wrapper > div.col-main > div > div.category-products > ul.products-grid.first.odd > li:nth-child(2) > h2 > a").click()
-        time.sleep(3)
+        self.driver.get("http://magento-stage.500friends.com/furniture")
+        time.sleep(4)
         driver.find_element_by_css_selector(
-            "#product_addtocart_form > div.product-essential > div.product-shop > div.add-to-box > div > button").click()
+            "body > div > div > div.main.col3-layout > div.col-wrapper > div.col-main > div > div.category-products > ul.products-grid.first.odd > li:nth-child(2) > div.actions > button").click()
         driver.find_element_by_css_selector(
             "body > div > div > div.main.col1-layout > div > div > div.page-title.title-buttons > ul > li > button > span > span").click()
+        time.sleep(4)
         driver.find_element_by_css_selector("#login" + "\\3a guest").click()
         driver.find_element_by_css_selector("#onepage-guest-register-button > span > span").click()
         driver.find_element_by_css_selector("#billing\\3a firstname").send_keys("Test_FN")

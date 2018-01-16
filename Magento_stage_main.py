@@ -10,7 +10,7 @@ import time
 class MerkeRules(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
-        self.EMAIL = "lwilliam670+0927_45@gmail.com"
+        self.EMAIL = "lwilliam670+0116_3.0@gmail.com"
         # self.PASSWORD = "Ifo10044"
         # self.SEARCH_TEXT_FORGOTPW = "Forgot password?"
         # self.OFACCOUNT = "Olivia Frumin Test Account"
@@ -19,13 +19,13 @@ class MerkeRules(unittest.TestCase):
         # import pdb
         # pdb.set_trace()
         driver = self.driver
-        # self.driver.get("http://magento-stage.500friends.com/furniture")
         self.driver.get("http://magento-stage.500friends.com/furniture")
-        driver.find_element_by_link_text("Couch").click()
+        time.sleep(4)
         driver.find_element_by_css_selector(
-            "#product_addtocart_form > div.product-essential > div.product-shop > div.add-to-box > div > button").click()
+            "body > div > div > div.main.col3-layout > div.col-wrapper > div.col-main > div > div.category-products > ul.products-grid.first.odd > li:nth-child(2) > div.actions > button").click()
         driver.find_element_by_css_selector(
             "body > div > div > div.main.col1-layout > div > div > div.page-title.title-buttons > ul > li > button > span > span").click()
+        time.sleep(4)
         driver.find_element_by_css_selector("#login" + "\\3a guest").click()
         driver.find_element_by_css_selector("#onepage-guest-register-button > span > span").click()
         driver.find_element_by_css_selector("#billing\\3a firstname").send_keys("Test_FN")
@@ -40,9 +40,12 @@ class MerkeRules(unittest.TestCase):
         select.select_by_visible_text("California")
         driver.find_element_by_css_selector("#billing\\3a postcode").send_keys("654321")
         driver.find_element_by_css_selector("#billing\\3a telephone").send_keys("0987654321")
+        time.sleep(4)
+        driver.find_element_by_id("billing:fax").click()
+        time.sleep(2)
         driver.find_element_by_css_selector("#billing-buttons-container > button > span > span").click()
-        time.sleep(5)
-        driver.find_element_by_css_selector("#s_method_freeshipping_freeshipping").click()
+        time.sleep(4)
+        driver.find_element_by_id("s_method_freeshipping_freeshipping").click()
         driver.find_element_by_css_selector("#shipping-method-buttons-container > button > span > span").click()
         time.sleep(5)
         driver.find_element_by_css_selector("#p_method_checkmo").click()
@@ -50,6 +53,16 @@ class MerkeRules(unittest.TestCase):
         time.sleep(5)
         driver.find_element_by_css_selector("#review-buttons-container > button > span > span").click()
         time.sleep(15)
+        # driver.find_element_by_css_selector("#billing-buttons-container > button > span > span").click()
+        # time.sleep(5)
+        # driver.find_element_by_css_selector("#s_method_freeshipping_freeshipping").click()
+        # driver.find_element_by_css_selector("#shipping-method-buttons-container > button > span > span").click()
+        # time.sleep(5)
+        # driver.find_element_by_css_selector("#p_method_checkmo").click()
+        # driver.find_element_by_css_selector("#payment-buttons-container > button > span > span").click()
+        # time.sleep(5)
+        # driver.find_element_by_css_selector("#review-buttons-container > button > span > span").click()
+        # time.sleep(15)
 
         # HTTPS - LP
         #-----------------------------------------------------------------------------
